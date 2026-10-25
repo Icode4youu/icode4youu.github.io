@@ -6,26 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Experimental interactive portfolio of Mark Dulay Danila, featuring CareerGuide and CampusSpill web applications."
+      content="Portfolio of Mark Dulay Danila — full-stack developer building student-facing web systems. Projects, internship credentials, and contact."
     />
-    <meta name="theme-color" content="#030309" />
+    <meta name="theme-color" content="#f7f6f2" />
+    <script>
+      ;(function () {
+        var t =
+          localStorage.getItem('md-theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        document.documentElement.dataset.theme = t
+      })()
+    </script>
     <link rel="canonical" href="https://icode4youu.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://icode4youu.github.io/" />
-    <meta property="og:title" content="Mark Danila — Systems Portfolio" />
+    <meta property="og:title" content="Mark Dulay Danila — Full-Stack Developer" />
     <meta
       property="og:description"
-      content="Student-centered platforms with real workflows: assessments, dashboards, realtime feeds, PWAs, and Android-ready builds."
+      content="Portfolio of Mark Dulay Danila — student-facing web systems, internship credentials, and contact."
     />
     <meta property="og:image" content="https://icode4youu.github.io/og-image.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Mark Danila — Systems Portfolio" />
+    <meta name="twitter:title" content="Mark Dulay Danila — Full-Stack Developer" />
     <meta
       name="twitter:description"
-      content="Student-centered platforms with real workflows: assessments, dashboards, realtime feeds, PWAs, and Android-ready builds."
+      content="Portfolio of Mark Dulay Danila — student-facing web systems, internship credentials, and contact."
     />
     <meta name="twitter:image" content="https://icode4youu.github.io/og-image.png" />
-    <title>Mark Danila — Systems Portfolio</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mark Dulay Danila",
+        "url": "https://icode4youu.github.io/",
+        "email": "mailto:markdulaydanila@gmail.com",
+        "jobTitle": "Full-stack developer",
+        "address": { "@type": "PostalAddress", "addressRegion": "South Cotabato", "addressCountry": "PH" },
+        "sameAs": [
+          "https://github.com/Icode4youu",
+          "https://www.linkedin.com/in/mark-dulay-danila-841870441/",
+          "https://www.facebook.com/mrkdlydnl",
+          "https://www.instagram.com/mrkdlydnl4/"
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Southeast Asian Institute of Technology"
+        },
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Internship Completion — Asset Nexus LLC",
+          "credentialCategory": "certificate",
+          "identifier": "CERT-2026-00004"
+        }
+      }
+    </script>
+    <title>Mark Dulay Danila — Full-Stack Developer</title>
   </head>
   <body>
     <div id="root"></div>
