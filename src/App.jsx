@@ -472,6 +472,25 @@ export default function App() {
           </div>
         </section>
 
+        <div className="ticker" aria-hidden="true">
+          <div className="ticker-track">
+            {[
+              'Open to internships',
+              'Junior developer roles',
+              'Freelance builds',
+              'Student-facing systems',
+              'PWA · Android delivery',
+              'Open to internships',
+              'Junior developer roles',
+              'Freelance builds',
+              'Student-facing systems',
+              'PWA · Android delivery',
+            ].map((item, index) => (
+              <span key={index}>{item}</span>
+            ))}
+          </div>
+        </div>
+
         <section id="work" className="section">
           <SectionHead
             kicker="01 · Selected work"
