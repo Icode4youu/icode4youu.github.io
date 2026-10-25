@@ -614,8 +614,8 @@ export default function App() {
 
         <section id="skills" className="section">
           <SectionHead
-            kicker="03 · Capabilities"
-            title="The tools behind the systems"
+            kicker="03 · Tech Stack"
+            title="My toolkit"
           />
           <div className="skill-grid">
             {stackGroups.map((group, index) => (
@@ -662,7 +662,7 @@ export default function App() {
           </div>
 
           <div className="process" data-reveal>
-            <h3 className="process-title">How I work</h3>
+            <h3 className="process-title">How i Planned</h3>
             <ol className="process-list">
               {processSteps.map((step) => (
                 <li key={step.id}>
