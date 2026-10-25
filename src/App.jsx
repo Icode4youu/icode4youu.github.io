@@ -78,6 +78,18 @@ const capabilities = [
   },
 ]
 
+const credentials = [
+  {
+    id: 'CERT-2026-00004',
+    title: 'Internship Completion',
+    issuer: 'Asset Nexus LLC',
+    detail: 'Intern Programmer — Information Technology',
+    issued: 'Oct 14, 2026',
+    rating: '84.5%',
+    file: 'CERT-2026-00004.pdf',
+  },
+]
+
 function useCursorGlow() {
   const glowRef = useRef(null)
 
@@ -370,6 +382,21 @@ function DownloadIcon({ className = 'h-4 w-4' }) {
   )
 }
 
+function BadgeIcon({ className = 'h-4 w-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="12" cy="9" r="5.2" stroke="currentColor" strokeWidth="1.8" />
+      <path
+        d="m9 13.4-2.2 7.1 5.2-3 5.2 3-2.2-7.1"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
 function CopyIcon({ className = 'h-4 w-4' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -625,10 +652,10 @@ function ModuleUniverse() {
   )
 }
 
-const TERMINAL_HELP = 'commands: whoami | projects | stack | socials | email | resume | open cg/cs | ls | ping | date | clear | exit — plus a few secrets…'
+const TERMINAL_HELP = 'commands: whoami | projects | stack | socials | email | resume | cert | open cg/cs | ls | ping | date | clear | exit — plus a few secrets…'
 
 const KNOWN_COMMANDS = [
-  'help', 'whoami', 'projects', 'stack', 'socials', 'email', 'resume', 'open',
+  'help', 'whoami', 'projects', 'stack', 'socials', 'email', 'resume', 'cert', 'open',
   'ls', 'dir', 'ping', 'date', 'sudo', 'hire', 'matrix', 'hello', 'hi', 'kamusta',
   '42', 'clear', 'exit', 'close',
 ]
@@ -832,6 +859,10 @@ function TerminalOverlay({ open, onClose, onMatrix }) {
       case 'resume':
         window.open(`${import.meta.env.BASE_URL}resume.pdf`, '_blank')
         out.push('opening resume.pdf…')
+        break
+      case 'cert':
+        window.open(`${import.meta.env.BASE_URL}${credentials[0].file}`, '_blank')
+        out.push(`opening ${credentials[0].id} — internship completion, asset nexus llc…`)
         break
       case 'open':
         if (arg === 'cg' || arg === 'careerguide') {
@@ -1154,6 +1185,37 @@ export default function App() {
               </div>
             ))}
           </div>
+          <div className="credential-grid">
+            {credentials.map((credential, index) => (
+              <a
+                key={credential.id}
+                href={`${import.meta.env.BASE_URL}${credential.file}`}
+                target="_blank"
+                rel="noreferrer"
+                data-reveal
+                style={{ '--delay': `${index * 120}ms` }}
+                className="credential-card"
+                aria-label={`Open certificate ${credential.id}: ${credential.title} from ${credential.issuer}`}
+              >
+                <div className="credential-top">
+                  <span>{credential.id}</span>
+                  <em>verified</em>
+                </div>
+                <h3>{credential.title}</h3>
+                <p>
+                  {credential.issuer} — {credential.detail}
+                </p>
+                <div className="credential-meta">
+                  <span>issued {credential.issued}</span>
+                  <span>rating {credential.rating}</span>
+                  <strong>
+                    View PDF
+                    <ArrowIcon />
+                  </strong>
+                </div>
+              </a>
+            ))}
+          </div>
         </section>
 
         <section id="process" className="process-section">
@@ -1203,6 +1265,15 @@ export default function App() {
               <a href={`${import.meta.env.BASE_URL}resume.pdf`} download className="secondary-command">
                 <DownloadIcon />
                 Download CV
+              </a>
+              <a
+                href={`${import.meta.env.BASE_URL}${credentials[0].file}`}
+                target="_blank"
+                rel="noreferrer"
+                className="secondary-command"
+              >
+                <BadgeIcon />
+                Internship cert
               </a>
             </div>
             <div className="social-row" aria-label="Social links">

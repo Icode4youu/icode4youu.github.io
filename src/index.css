@@ -1146,6 +1146,101 @@
   line-height: 1.8;
 }
 
+.credential-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.credential-card {
+  display: block;
+  border: 1px solid rgba(103, 232, 249, 0.25);
+  border-radius: 1.5rem;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.09), rgba(255, 255, 255, 0.035) 55%);
+  padding: 1.4rem;
+  text-decoration: none;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease;
+}
+
+.credential-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(103, 232, 249, 0.55);
+  background: rgba(103, 232, 249, 0.08);
+}
+
+.credential-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.credential-top span {
+  color: #67e8f9;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+}
+
+.credential-top em {
+  border: 1px solid rgba(74, 222, 128, 0.45);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  color: #4ade80;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.58rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.credential-card h3 {
+  margin-top: 1.2rem;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.credential-card > p {
+  margin-top: 0.6rem;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.credential-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+.credential-meta span {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  color: #cbd5e1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.credential-meta strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: auto;
+  color: #67e8f9;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
 .contact-shell {
   position: relative;
   overflow: hidden;
@@ -1609,6 +1704,10 @@
   .capability-grid {
     grid-column: 1 / -1;
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .credential-grid {
+    grid-column: 1 / -1;
   }
 }
 
